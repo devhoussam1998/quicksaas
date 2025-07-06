@@ -1,7 +1,14 @@
 import { getSessionCookie } from "better-auth/cookies";
 import { NextRequest, NextResponse } from "next/server";
 
-const isUnprotected = ["/", "/sign-in", "/otp-verification"];
+const isUnprotected = [
+  "/",
+  "/sign-in",
+  "/otp-verification",
+  "/privacy-policy",
+  "/terms-of-service",
+  "/licenses",
+];
 
 const isProtected = ["/dashboard", "/settings", "/billing"];
 
@@ -36,8 +43,11 @@ export const config = {
     "/",
     "/sign-in",
     "/otp-verification",
-    "/dashboard", 
-    "/settings", 
+    "/privacy-policy",
+    "/terms-of-service",
+    "/licenses",
+    "/dashboard",
+    "/settings",
     "/billing",
   ],
 };
