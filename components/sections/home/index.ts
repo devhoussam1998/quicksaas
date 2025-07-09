@@ -5,4 +5,5 @@ export { default as Demo } from "./demo";
 export { default as Pricing } from "./pricing";
 export { default as FAQ } from "./faq";
 export { default as Testimonials } from "./testimonials";
+export { default as Newsletter } from "./newsletter";
 export { default as CTA } from "./call-to-action";

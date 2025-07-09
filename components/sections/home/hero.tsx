@@ -1,18 +1,44 @@
 "use client";
 
+import { Github } from "@/components/icons/github";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Rocket, Star, TvMinimalPlay, Wand } from "lucide-react";
+import { Percent, Rocket, Star, Telescope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const avatars = [
-  { src: "https://github.com/shadcn.png", fallback: "CN", alt: "User CN" },
-  { src: "https://github.com/shadcn.png", fallback: "CN", alt: "User CN" },
-  { src: "https://github.com/shadcn.png", fallback: "CN", alt: "User CN" },
-  { src: "https://github.com/shadcn.png", fallback: "CN", alt: "User CN" },
-  { src: "https://github.com/shadcn.png", fallback: "CN", alt: "User CN" },
+  {
+    id: 1,
+    src: "https://github.com/shadcn.png",
+    fallback: "CN",
+    alt: "User CN",
+  },
+  {
+    id: 2,
+    src: "https://github.com/shadcn.png",
+    fallback: "CN",
+    alt: "User CN",
+  },
+  {
+    id: 3,
+    src: "https://github.com/shadcn.png",
+    fallback: "CN",
+    alt: "User CN",
+  },
+  {
+    id: 4,
+    src: "https://github.com/shadcn.png",
+    fallback: "CN",
+    alt: "User CN",
+  },
+  {
+    id: 5,
+    src: "https://github.com/shadcn.png",
+    fallback: "CN",
+    alt: "User CN",
+  },
 ];
 
 export default function Hero() {
@@ -28,7 +54,7 @@ export default function Hero() {
             className="gap-2 rounded-full px-4 py-1.5 text-sm"
           >
             <Rocket className="!size-4" />
-            <span>Launch fast. Earn faster.</span>
+            <span>Launch fast, Earn faster</span>
           </Badge>
           <h1 className="text-4xl font-extrabold text-balance md:text-5xl lg:text-6xl">
             <span className="text-primary">Launch Your SaaS Quickly </span> with
@@ -43,24 +69,31 @@ export default function Hero() {
           <div className="flex items-center gap-4">
             <Button size="lg" asChild>
               <Link href="/">
-                <Wand className="size-4" />
-                <span>Give It a Try</span>
+                <Github className="size-4" />
+                <span>Get Access</span>
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link href="/">
-                <TvMinimalPlay className="size-4" />
+                <Telescope className="size-4" />
                 <span>View Live Demo</span>
               </Link>
             </Button>
           </div>
+          <div className="flex items-center gap-2">
+            <Percent className="text-primary size-4 shrink-0" />
+            <span className="text-muted-foreground text-base font-medium">
+              <span className="text-primary font-semibold">$100 OFF</span> for
+              the first 500 customers (10 left)
+            </span>
+          </div>
           <div className="flex items-center gap-4">
             <div className="*:data-[slot=avatar]:ring-background flex items-center -space-x-4 *:data-[slot=avatar]:ring-2">
-              {avatars.map(({ src, fallback, alt }, i) => (
-                <Avatar key={i} className="size-10">
-                  <AvatarImage src={src} alt={alt} />
+              {avatars.map((avatar) => (
+                <Avatar key={avatar.id} className="size-10">
+                  <AvatarImage src={avatar.src} alt={avatar.alt} />
                   <AvatarFallback className="font-medium">
-                    {fallback}
+                    {avatar.fallback}
                   </AvatarFallback>
                 </Avatar>
               ))}
@@ -72,7 +105,7 @@ export default function Hero() {
                 ))}
               </div>
               <p className="text-muted-foreground text-sm font-medium">
-                <span className="text-primary font-semibold">1417</span> Happy
+                <span className="text-primary font-semibold">400+</span> Happy
                 Founders & Creators
               </p>
             </div>

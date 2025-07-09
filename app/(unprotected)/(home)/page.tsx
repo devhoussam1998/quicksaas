@@ -1,4 +1,14 @@
-import { Hero, Problem, Features, Demo, Pricing, FAQ, Testimonials, CTA } from "@/components/sections/home";
+import {
+  CTA,
+  Demo,
+  FAQ,
+  Features,
+  Hero,
+  Newsletter,
+  Pricing,
+  Problem,
+  Testimonials,
+} from "@/components/sections/home";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +25,7 @@ export default function Home() {
       <Pricing />
       <FAQ />
       <Testimonials />
+      <Newsletter />
       <CTA />
     </>
   );
